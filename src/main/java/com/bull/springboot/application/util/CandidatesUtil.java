@@ -1,9 +1,9 @@
-package com.divit.springboot.application.util;
+package com.bull.springboot.application.util;
 
 import java.util.List;
 import java.util.Set;
 
-import com.divit.springboot.application.model.Candidate;
+import com.bull.springboot.application.model.Candidate;
 
 public final class CandidatesUtil {
 

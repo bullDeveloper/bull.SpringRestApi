@@ -1,4 +1,4 @@
-package com.divit.springboot.application.model;
+package com.bull.springboot.application.model;
 
 import java.util.Set;
 
