@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.bull.spring-boot-simple-rest-api</groupId>
-	<artifactId>com.divit.spring-boot-simple-rest-api</artifactId>
+	<artifactId>com.bull.spring-boot-simple-rest-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<url>http://maven.apache.org</url>
 
