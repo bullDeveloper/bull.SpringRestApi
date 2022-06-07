@@ -14,9 +14,9 @@ import lombok.extern.slf4j.Slf4j;
 public class ApiRestController {
 
 	
-	@RequestMapping(value = "transactions/types/{type}", method = RequestMethod.GET)
-	public ResponseEntity<?> fetchCandidates(@RequestParam(value = "type", required = false) String skill) {
-		log.info("Response received. Params: type {}", skill);
+	@GetMapping(value = "/transactions")
+	public ResponseEntity<?> fetchCandidates(@RequestParam(value = "types", required = false) String types) {
+		log.info("Response received. Params: types {}", types);
 		return ResponseEntity.ok(null);
 
 	}
