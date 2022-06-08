@@ -1,5 +1,4 @@
 FROM openjdk:11
-VOLUME /tmp
-COPY /target/spring-boot-bull.jar app.jar
 EXPOSE 8888
-ENTRYPOINT ["java","-jar","/app.jar"]
+ADD /target/spring-boot-bull.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
