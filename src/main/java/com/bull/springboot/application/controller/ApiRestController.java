@@ -34,7 +34,7 @@ public class ApiRestController {
 	@GetMapping(value = {"/types/", "/types"})
 	@ApiOperation(value="Encuentra todas las transacciones",
 			notes="Provee servicio de busqueda de todas las transacciones",
-			response=Transaction.class)
+			response=Long.class)
 	public ResponseEntity<?> findAllTransactions() {
 		return ResponseEntity.status(HttpStatus.OK).body(memoryDatabase.findAll());
 	}
@@ -42,7 +42,7 @@ public class ApiRestController {
 	@GetMapping(value = "/types/{types}")
 	@ApiOperation(value="Encuentra transacciones por tipo",
 			notes="Provee servicio de busqueda de transacciones por tipo, si el tipo no se encuentra dentro de la lista de transacciones en memoria devolvera una lista vacia, el parametro por definicion no puede ser nulo y es requerido",
-			response=Transaction.class)
+			response=Long.class)
 	public ResponseEntity<?> findTransactions(@PathVariable (name ="types", required = false) String types) {
 		log.info("Response received. Params: types {}", types);
 		return StringUtils.isEmpty(types)?ResponseEntity.status(HttpStatus.OK).body(memoryDatabase.findAll()):ResponseEntity.status(HttpStatus.OK).body(memoryDatabase.findByType(types));
@@ -89,7 +89,7 @@ public class ApiRestController {
 	@GetMapping(value = "/sum/{parent_id }")
 	@ApiOperation(value="Encuentra transacciones por parent_id y realiza la suma de los amount",
 			notes="Provee servicio de agrupamiento de transacciones por parent_id, realizando la suma de los amount",
-			response=Transaction.class)
+			response=Long.class)
 	public ResponseEntity<?> sumTransactions(@PathVariable (name ="parent_id ", required = true) Long parent_id ) {
 		log.info("Response received. Params: types {}", parent_id);
 		return ResponseEntity.status(HttpStatus.OK).body("sum:" + memoryDatabase.groupByParentId(parent_id));

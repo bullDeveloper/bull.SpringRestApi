@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import javax.annotation.PostConstruct;
 
@@ -23,10 +22,10 @@ public class MemoryDatabaseImpl implements MemoryDatabase {
 	@PostConstruct
 	private void initializeDatabaseMemory() {
 
-		transactionHash.put((long) 10, new TransactionSwaggerModel(50000, "cars", 0));
-		transactionHash.put((long) 20, new TransactionSwaggerModel(5000, "shopping", 0));
-		transactionList.add(new Transaction(10, 50000, "cars", 0));
-		transactionList.add(new Transaction(20, 5000, "shopping", 0));
+		transactionHash.put((long) 10, new TransactionSwaggerModel(50000, "cars", 20));
+		transactionHash.put((long) 20, new TransactionSwaggerModel(5000, "shopping", 10));
+		transactionList.add(new Transaction(10, 50000, "cars", 20));
+		transactionList.add(new Transaction(20, 5000, "shopping", 10));
 
 	}
 
@@ -74,10 +73,10 @@ public class MemoryDatabaseImpl implements MemoryDatabase {
 
 	@Override
 	public Double groupByParentId(Long parent_id) {
-		Stream<Transaction> streamFilter = transactionList.stream().filter(t -> t.getParent_id()==parent_id);
-		if(streamFilter.count()>0)
-			return streamFilter.mapToDouble(Transaction::getAmount).sum();
-		else
+		try{
+			return transactionList.stream().filter(t -> t.getParent_id()==parent_id).mapToDouble(Transaction::getAmount).sum();
+		}catch(Exception e) {
 			return Double.valueOf(0);
+		}
 	}
 }
