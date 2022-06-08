@@ -15,8 +15,8 @@ Para comenzar
 
 ## To run as a container (Docker)
 Construir la imagen docker (Situado en el directorio Raiz del proyecto):
-```
 Precondicion: Antes de iniciar el docker build tener el target del proyecto creado spring-boot-bull.jar (Esto se realiza con un mvn clean install)
+```
 docker build -f DockerFile -t docker-spring-boot-mendel .
 ```
 
