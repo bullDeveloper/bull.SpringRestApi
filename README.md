@@ -13,4 +13,13 @@ Para comenzar
 - La documentacion de toda la api se encuentra en http://localhost:8888/swagger-ui.html
 - Los servicios publicados se encuentran desarrollados en com.bull.springboot.application.controller.ApiRestController
 
+## To run as a container (Docker)
+Construir la imagen docker (Situado en el directorio Raiz del proyecto):
+```
+docker build -f Dockerfile -t docker-spring-boot-api .
+```
 
+Run container:
+```
+docker run -p 8888:8888 docker-spring-boot-api
+```
