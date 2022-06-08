@@ -10,6 +10,7 @@ Para comenzar
 - Ejecutar en la raiz del proyecto, mvn clean install
 - Ejecutar la clase com.bull.springboot.application.Application como una aplicacion java
 - El servicio se ejecutara en localhost:8888
-- Los servicios publicados se encuentran en com.bull.springboot.application.controller.ApiRestController
+- La documentacion de toda la api se encuentra en http://localhost:8888/swagger-ui.html
+- Los servicios publicados se encuentran desarrollados en com.bull.springboot.application.controller.ApiRestController
 
 
