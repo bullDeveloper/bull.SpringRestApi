@@ -20,8 +20,11 @@ Precondicion: Antes de iniciar el docker build tener el target del proyecto crea
 ```
 docker build -f DockerFile -t docker-spring-boot-mendel .
 ```
+
 Validacion de container creado exitosamente, al ejecutar el siguiente comando debe aparecer el containter docker-spring-boot-mendel:
+```
 docker images
+```
 
 Ejecutar container:
 ```
