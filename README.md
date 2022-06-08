@@ -13,4 +13,20 @@ Para comenzar
 - La documentacion de toda la api se encuentra en http://localhost:8888/swagger-ui.html
 - Los servicios publicados se encuentran desarrollados en com.bull.springboot.application.controller.ApiRestController
 
+## Para ejecutar la aplicacion como un container (Docker)
+Construir la imagen docker (Situado en el directorio Raiz del proyecto):
 
+Precondicion: Antes de iniciar el docker build tener el target del proyecto creado spring-boot-bull.jar (Esto se realiza con un mvn clean install)
+```
+docker build -f DockerFile -t docker-spring-boot-mendel .
+```
+
+Validacion de container creado exitosamente, al ejecutar el siguiente comando debe aparecer el containter docker-spring-boot-mendel:
+```
+docker images
+```
+
+Ejecutar container:
+```
+docker run -p 8888:8888 docker-spring-boot-mendel
+```
