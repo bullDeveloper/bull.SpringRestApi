@@ -16,10 +16,10 @@ Para comenzar
 ## To run as a container (Docker)
 Construir la imagen docker (Situado en el directorio Raiz del proyecto):
 ```
-docker build -f Dockerfile -t docker-spring-boot-api .
+docker build -f DockerFile -t docker-spring-boot-mendel .
 ```
 
-Run container:
+Ejecutar container:
 ```
-docker run -p 8888:8888 docker-spring-boot-api
+docker run -p 8888:8888 docker-spring-boot-mendel
 ```
