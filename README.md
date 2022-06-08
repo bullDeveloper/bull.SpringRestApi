@@ -1,4 +1,4 @@
-# Spring Boot, Spring Data MongoDB y RestApi
+# Spring Boot, Spring Data y RestApi
 Minimos requisitos
 - Java 11
 - Maven 3.3+
