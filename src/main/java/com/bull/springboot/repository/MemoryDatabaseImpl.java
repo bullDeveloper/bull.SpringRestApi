@@ -56,7 +56,7 @@ public class MemoryDatabaseImpl implements MemoryDatabase {
 	}
 
 	@Override
-	public Boolean updateTransaction(Transaction transaction) throws CustomException {
+	public Boolean updateOrInsertTransaction(Transaction transaction) {
 		if(transactionHash.containsKey(transaction.getTransaction_id())) {
 			transactionHash.put(transaction.getTransaction_id(), new TransactionSwaggerModel(transaction.getAmount(), transaction.getType(), transaction.getParent_id()));
 			

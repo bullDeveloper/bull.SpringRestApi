@@ -10,7 +10,7 @@ public interface MemoryDatabase {
 	public List<Long> findAll();
 	public List<Long> findByType(String type);
 	public Boolean insertTransaction(Transaction transaction) throws CustomException;
-	public Boolean updateTransaction(Transaction transaction) throws CustomException;
+	public Boolean updateOrInsertTransaction(Transaction transaction);
 	public Double groupByParentId(Long parent_id);
 
 }
