@@ -37,6 +37,11 @@ public class MemoryDatabaseImpl implements MemoryDatabase {
 	}
 
 	@Override
+	public List<Transaction> findAllDetails() {
+		return transactionList;
+	}
+	
+	@Override
 	public List<Long> findByType(String type) {
 		return transactionList.stream()
 				.filter(transaction -> transaction.getType().equals(type))
@@ -81,4 +86,6 @@ public class MemoryDatabaseImpl implements MemoryDatabase {
 			return Double.valueOf(0);
 		}
 	}
+
+
 }

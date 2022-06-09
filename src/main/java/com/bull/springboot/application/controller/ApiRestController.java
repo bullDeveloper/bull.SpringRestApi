@@ -46,6 +46,13 @@ public class ApiRestController {
 		return StringUtils.isEmpty(types)?ResponseEntity.status(HttpStatus.OK).body(memoryDatabase.findAll()):ResponseEntity.status(HttpStatus.OK).body(memoryDatabase.findByType(types));
 	}
 	
+	@GetMapping(value = "/details")
+	@ApiOperation(value="Devuelve todas las transacciones con sus detalles",
+			notes="Provee servicio de de obtenciones de todas las transacciones con todos sus detalles.",
+			response=Long.class)
+	public ResponseEntity<?> findAllTransactionDetails() {
+		return ResponseEntity.status(HttpStatus.OK).body(memoryDatabase.findAllDetails());
+	}
 	
 	@PutMapping(value = "/{transaction_id}", 
 		    consumes=MediaType.APPLICATION_JSON_VALUE, 
@@ -68,7 +75,7 @@ public class ApiRestController {
 	}
 	
 	@GetMapping(value = "/sum/{transaction_id }")
-	@ApiOperation(value="Encuentra transacciones por parent_id y realiza la suma de los amount",
+	@ApiOperation(value="Encuentra transacciones que estan transitivamente conectadas por su parent_id a transaction_id y realiza la suma de los amount",
 			notes="Provee servicio de la suma de todas las transacciones que estan transitivamente conectadas por su parent_id a transaction_id, realizando la suma de los amount",
 			response=Long.class)
 	public ResponseEntity<?> sumTransactions(@PathVariable (name ="transaction_id ", required = true) Long transaction_id ) {
