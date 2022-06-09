@@ -48,30 +48,12 @@ public class ApiRestController {
 		return StringUtils.isEmpty(types)?ResponseEntity.status(HttpStatus.OK).body(memoryDatabase.findAll()):ResponseEntity.status(HttpStatus.OK).body(memoryDatabase.findByType(types));
 	}
 	
-	@PostMapping(value = "/{transaction_id}", 
-		    consumes=MediaType.APPLICATION_JSON_VALUE, 
-		    produces = MediaType.APPLICATION_JSON_VALUE )
-	@ApiOperation(value="Da de alta una transaccion",
-	notes="Provee servicio de alta de transaccion, el transaction_id se pone como parametro de tipo Path y el mismo no debe existir dentro de la lista de transaccion pre existentes, mientras que se envia un Body con el resto de la informacion",
-	response=Transaction.class)
-	public ResponseEntity<?> createUser(@PathVariable (required = true) long transaction_id, @RequestBody TransactionSwaggerModel transactionDetails)    {
-		Transaction transaction= new Transaction(transaction_id, transactionDetails.getAmount(), transactionDetails.getType(), transactionDetails.getParent_id());
-		try {
-			memoryDatabase.insertTransaction(transaction);
-			return ResponseEntity.status(HttpStatus.CREATED).body(transaction);
-		} catch(CustomException e) {
-			return ResponseEntity.status(HttpStatus.FOUND).body(e.getMessage().toCharArray());
-		} catch(Exception e) {
-			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(e);
-		}
-		
-	}
 	
 	@PutMapping(value = "/{transaction_id}", 
 		    consumes=MediaType.APPLICATION_JSON_VALUE, 
 		    produces = MediaType.APPLICATION_JSON_VALUE )
-	@ApiOperation(value="Actualiza una transaccion",
-	notes="Provee servicio de actualizacion de transaccion, el transaction_id se pone como parametro de tipo Path y el mismo debe existir dentro de la lista de transaccion pre existentes, mientras que se envia un Body con el resto de la informacion",
+	@ApiOperation(value="Actualiza / Da de Alta, una transaccion",
+	notes="Provee servicio de actualizacion y de alta de transaccion, el transaction_id se pone como parametro de tipo Path y el mismo de existir dentro de la lista de transaccion pre existentes se actualiza de lo contrario se da de alta, en el Body con el resto de la informacion",
 	response=Transaction.class)
 	public ResponseEntity<?> updateUser(@PathVariable (required = true) long transaction_id, @RequestBody TransactionSwaggerModel transactionDetails)    {
 		Transaction transaction= new Transaction(transaction_id, transactionDetails.getAmount(), transactionDetails.getType(), transactionDetails.getParent_id());

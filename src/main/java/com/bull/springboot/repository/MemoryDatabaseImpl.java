@@ -67,7 +67,9 @@ public class MemoryDatabaseImpl implements MemoryDatabase {
 			return true;
 			
 		}else {
-			throw new CustomException("No existe una transaccion con el transaction_id: " + transaction.getTransaction_id());
+			transactionHash.put(transaction.getTransaction_id(), new TransactionSwaggerModel(transaction.getAmount(), transaction.getType(), transaction.getParent_id()));
+			transactionList.add(transaction);
+			return false;
 		}
 	}
 
