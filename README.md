@@ -11,9 +11,7 @@ Para comenzar
 - Ejecutar la clase com.bull.springboot.application.Application como una aplicacion java
 - El servicio se ejecutara en localhost:8888
 - La documentacion de toda la api se encuentra en [http://localhost:8888/swagger-ui.html](http://localhost:8888/swagger-ui.html)
-
-![2022-06-09 16_40_51-Calendar](https://user-images.githubusercontent.com/33255456/172931050-734cb8ca-2a0d-46c2-bbb8-cc0a4517765f.png)
-
+![2022-06-09 16_55_49-Calendar](https://user-images.githubusercontent.com/33255456/172933362-79d9c6f0-65a9-4e7a-aae3-16e5b5d215c9.png)
 - Los servicios publicados se encuentran desarrollados en com.bull.springboot.application.controller.ApiRestController
 
 ## Para ejecutar la aplicacion como un container (Docker)
