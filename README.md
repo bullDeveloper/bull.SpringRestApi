@@ -6,11 +6,11 @@ Minimos requisitos
 - Docker CE
 
 Para comenzar
-- Si queres utilizar esta aplicacion, clona esta aplicacion https://github.com/bullDeveloper/bull.SpringRestApi.MongoDBEmbebed.git
+- Si queres utilizar esta aplicacion, clona esta aplicacion https://github.com/bullDeveloper/bull.SpringRestApi.git
 - Ejecutar en la raiz del proyecto, mvn clean install
 - Ejecutar la clase com.bull.springboot.application.Application como una aplicacion java
 - El servicio se ejecutara en localhost:8888
-- La documentacion de toda la api se encuentra en http://localhost:8888/swagger-ui.html
+- La documentacion de toda la api se encuentra en [http://localhost:8888/swagger-ui.html](http://localhost:8888/swagger-ui.html)
 - Los servicios publicados se encuentran desarrollados en com.bull.springboot.application.controller.ApiRestController
 
 ## Para ejecutar la aplicacion como un container (Docker)
