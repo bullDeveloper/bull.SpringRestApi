@@ -7,7 +7,8 @@ Minimos requisitos
 
 Para comenzar
 - Si queres utilizar esta aplicacion, clona esta aplicacion https://github.com/bullDeveloper/bull.SpringRestApi.git
-- Ejecutar en la raiz del proyecto, mvn clean install
+- Por IDE (Eclipse) boton derecho sobre el proyecto run as-> Maven install, creara el compilado jar en el target
+- Por consola ejecutar en la raiz del proyecto, mvn clean install
 - Ejecutar la clase com.bull.springboot.application.Application como una aplicacion java
 - El servicio se ejecutara en localhost:8888
 - La documentacion de toda la api se encuentra en [http://localhost:8888/swagger-ui.html](http://localhost:8888/swagger-ui.html)
