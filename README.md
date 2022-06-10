@@ -31,3 +31,6 @@ Ejecutar container:
 ```
 docker run -p 8888:8888 docker-spring-boot-mendel
 ```
+## Para ejecutar TDD
+
+En el paquete com.bull.springboot.test se encuentra la clase TDDBasicoServicios, basada en JUnit5, la cual con IDE se puede ejecutar facilmente como Junit. El mismo valida 4 servicios de respositorio necesarios para la restApi. Alta, Modificacion, busqueda por tipo, suma por transitividad.
