@@ -20,6 +20,12 @@ public class TransactionSwaggerModel {
 		this.parent_id = parent_id;
 	}
 	
+	public void update (double amount, String type, long parent_id) {
+		this.setAmount(amount);
+		this.setType(type);
+		this.setParent_id(parent_id);
+	}
+	
 	public TransactionSwaggerModel() {
 		super();
 	}

@@ -80,6 +80,6 @@ public class ApiRestController {
 			response=Long.class)
 	public ResponseEntity<?> sumTransactions(@PathVariable (name ="transaction_id ", required = true) Long transaction_id ) {
 		log.info("Response received. Params: types {}", transaction_id);
-		return ResponseEntity.status(HttpStatus.OK).body("sum:" + memoryDatabase.groupByParentId(transaction_id));
+		return ResponseEntity.status(HttpStatus.OK).body("sum:" + memoryDatabase.transitiveRelations(transaction_id));
 	}
 }

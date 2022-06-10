@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @JsonDeserialize
 @JsonPropertyOrder({"transaction_id", "amount", "type", "parent_id"})
-public class Transaction extends TransactionSwaggerModel{
+public class Transaction extends TransactionSwaggerModel {
 
 	@JsonProperty("transaction_id")
 	private long transaction_id;

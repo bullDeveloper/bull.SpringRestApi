@@ -12,6 +12,6 @@ public interface MemoryDatabase {
 	public List<Long> findByType(String type);
 	public Boolean insertTransaction(Transaction transaction) throws CustomException;
 	public Boolean updateOrInsertTransaction(Transaction transaction);
-	public Double groupByParentId(Long parent_id);
+	public Double transitiveRelations(Long transaction_id);
 
 }
