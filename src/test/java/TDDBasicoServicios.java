@@ -1,4 +1,4 @@
-package com.bull.springboot.test;
+
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;

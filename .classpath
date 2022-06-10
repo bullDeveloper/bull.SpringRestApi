@@ -29,15 +29,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="C:/Users/User/.m2/repository/org/springframework/boot/spring-boot-test/2.5.0/spring-boot-test-2.5.0.jar" sourcepath="C:/Users/User/.m2/repository/org/springframework/boot/spring-boot-test/2.5.0/spring-boot-test-2.5.0-sources.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="test" value="true"/>
-			<attribute name="maven.groupId" value="org.springframework.boot"/>
-			<attribute name="maven.artifactId" value="spring-boot-test"/>
-			<attribute name="maven.version" value="2.5.0"/>
-			<attribute name="maven.scope" value="test"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
