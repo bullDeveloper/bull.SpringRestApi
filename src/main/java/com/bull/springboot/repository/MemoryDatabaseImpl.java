@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.bull.springboot.application.model.Transaction;
@@ -15,6 +16,7 @@ import com.bull.springboot.application.model.TransactionSwaggerModel;
 import com.bull.springboot.repository.exeption.CustomException;
 
 @Service
+@Qualifier("memoryDatabaseImpl")
 public class MemoryDatabaseImpl implements MemoryDatabase {
 
 	//Hash por transaction_id

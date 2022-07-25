@@ -1,6 +1,7 @@
 package com.bull.springboot.application.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bull.springboot.application.model.Transaction;
 import com.bull.springboot.application.model.TransactionSwaggerModel;
-import com.bull.springboot.repository.MemoryDatabaseImpl;
+import com.bull.springboot.repository.MemoryDatabase;
 
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -26,8 +27,9 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(value = "/transactions")
 public class ApiRestController {
 
-	@Autowired
-	MemoryDatabaseImpl memoryDatabase;
+	@Autowired(required=true)
+	@Qualifier(value="memoryDatabaseImpl")
+	MemoryDatabase memoryDatabase;
 	
 	@GetMapping(value = {"/types/", "/types"})
 	@ApiOperation(value="Encuentra todas las transacciones",
