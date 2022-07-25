@@ -33,7 +33,7 @@ public class Application {
 	
 	private ApiInfo apiInfoDetails() {
 		return new ApiInfo(
-				"Java Code Challenge Mendel", 
+				"Java Code Api Rest Example", 
 				"Servicio RestFul de Transacciones", 
 				"1.0", 
 				"Free to Use", 
